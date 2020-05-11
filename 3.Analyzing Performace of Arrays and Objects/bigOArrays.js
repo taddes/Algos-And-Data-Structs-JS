@@ -53,6 +53,5 @@ slice O(n) - returns copy of part of array, 10 vs 1000. Size matters
 splice O(n) - remove and add new elements (versatile)
 sort O(n * log n)
 forEach/map/filter/reduce O(n)
-
 */
 
