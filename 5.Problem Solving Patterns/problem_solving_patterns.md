@@ -14,3 +14,8 @@ Some patterns include:
 * Useful when you need to compare multiple inputs.
 * This pattern uses objects or sets of objects to collect values/frequencies of values.
 * This is often O(n) and can avoid the need for nested loops or O(n^2) operations with arrays/strings.
+
+### Multiple Pointers
+* Creating pointers or values that correspond to an index or position and move towards the beginning, end or middle, based on a certain condition.
+* Very efficient for solving problems with minimal space complexity as well. 
+    * For example, a linear structure like a list or string, and you want to search for a pair of values, or something that meets a condition. Iterate or move through in a certain way. 
