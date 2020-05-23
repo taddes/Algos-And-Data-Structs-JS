@@ -5,6 +5,8 @@ array, but it will always be sorted
 */
 
 // Simple single iteration using the counter method
+// Builds an object that has unique value counter
+// The total number of unique keys in counter object returns unique values
 function countUniqueValues(array) {
   if (array.length === 0) {
     return 0;
@@ -22,6 +24,9 @@ countUniqueValues([1,2,3,4,4,4,7,7,12,12,14])
 countUniqueValues([])
 countUniqueValues([-2,-1,-1, 0, 2])
 countUniqueValues([1,1,1,1,1,2])
+
+
+// Interesting alternate method
 
 function countUniqueValuesAlt(array) {
 
