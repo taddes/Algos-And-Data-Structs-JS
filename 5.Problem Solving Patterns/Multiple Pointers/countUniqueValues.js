@@ -8,9 +8,9 @@ array, but it will always be sorted
 // Builds an object that has unique value counter
 // The total number of unique keys in counter object returns unique values
 function countUniqueValues(array) {
-  if (array.length === 0) {
-    return 0;
-  }
+  // if (array.length === 0) {
+  //   return 0;
+  // }
   counter = {}
   for (let int of array) {
     counter[int] = (counter[int] || 0) + 1;
@@ -26,10 +26,28 @@ countUniqueValues([-2,-1,-1, 0, 2])
 countUniqueValues([1,1,1,1,1,2])
 
 
-// Interesting alternate method
-
+// Interesting alternate method - USING POINTERS
+// Modifies array as it iterates, building the unique values at the start of array.
+// Two pointer values, one at base of array, the other like a scout moving forward.
 function countUniqueValuesAlt(array) {
+  if (array.length === 0) {
+    console.log(0)
+    return 0;
+  }
+  pointerBase = 0;
+  pointerScout = 1;
 
+  while (pointerScout <= array.length - 1) {
+    if (array[pointerBase] === array[pointerScout]) {
+      pointerScout++;
+    } else if (array[pointerBase] !== array[pointerScout]) {
+      pointerBase++;
+      array[pointerBase] = array[pointerScout]
+      pointerScout++;
+    }
+  }
+  console.log(pointerBase + 1)
+  return pointerBase + 1;
 }
 
 countUniqueValuesAlt([1,1,1,1,1,2])
