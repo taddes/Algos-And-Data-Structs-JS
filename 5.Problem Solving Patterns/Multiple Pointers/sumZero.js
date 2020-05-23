@@ -8,6 +8,9 @@ sumZero([-3, -2, -1, 0, 1, 2, 3]) // [-3, 3]
 sumZero([-2, 0, 1, 3]) // undefined
 */
 
+// Time complexity - O(n)
+// Space complexity - O(1)
+
 function sumZero(arr) {
   let left = 0;
   let right = arr.length - 1;
@@ -25,8 +28,26 @@ function sumZero(arr) {
 }
 
 
-
-
 console.log(sumZero([-3, -2, -1, 0, 1, 2, 3])) 
 console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 5])) 
 console.log(sumZero([-2, 0, 1, 3]))  
+
+// Alt solution
+
+function sumZero2(arr) {
+  let point1 = 0;
+  let point2 = arr.length -1;
+
+  while (point1 < point2)
+  if (arr[point1] + arr[point2] === 0) {
+    return [arr[point1], arr[point2]]
+  } else if (arr[point1] + arr[point2] > 0) {
+    point2--;
+  } else if (arr[point1] + arr[point2] < 0) {
+    point1++;
+  }
+}
+
+console.log(sumZero2([-3, -2, -1, 0, 1, 2, 3])) 
+console.log(sumZero2([-4, -3, -2, -1, 0, 1, 2, 5])) 
+console.log(sumZero2([-2, 0, 1, 3]))
