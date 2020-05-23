@@ -11,7 +11,7 @@ function countUniqueValues(array) {
   // if (array.length === 0) {
   //   return 0;
   // }
-  counter = {}
+  const counter = {}
   for (let int of array) {
     counter[int] = (counter[int] || 0) + 1;
   }
@@ -24,9 +24,11 @@ countUniqueValues([1,2,3,4,4,4,7,7,12,12,14])
 countUniqueValues([])
 countUniqueValues([-2,-1,-1, 0, 2])
 countUniqueValues([1,1,1,1,1,2])
+console.log()
 
 
 // Interesting alternate method - USING POINTERS
+// Avoids using a unique variable, uses MUCH less memory
 // Modifies array as it iterates, building the unique values at the start of array.
 // Two pointer values, one at base of array, the other like a scout moving forward.
 function countUniqueValuesAlt(array) {
@@ -34,8 +36,8 @@ function countUniqueValuesAlt(array) {
     console.log(0)
     return 0;
   }
-  pointerBase = 0;
-  pointerScout = 1;
+  let pointerBase = 0;
+  let pointerScout = 1;
 
   while (pointerScout <= array.length - 1) {
     if (array[pointerBase] === array[pointerScout]) {
@@ -55,3 +57,26 @@ countUniqueValuesAlt([1,2,3,4,4,4,7,7,12,12,14])
 countUniqueValuesAlt([])
 countUniqueValuesAlt([-2,-1,-1, 0, 2])
 countUniqueValuesAlt([1,1,1,1,1,2])
+console.log()
+
+
+// Additional alternative, variation on solution above
+function countUniqueValuesAlt2(array) {
+  let i = 0;
+  for (let j = 1; j < array.length; j++) {
+    if (array[i] !== array[j]) {
+      i++;
+      array[i] = array[j];
+    } else {
+      j++;
+    }
+  }
+  console.log(i + 1)
+  return i + 1
+}
+
+countUniqueValuesAlt2([1,1,1,1,1,2])
+countUniqueValuesAlt2([1,2,3,4,4,4,7,7,12,12,14])
+countUniqueValuesAlt2([])
+countUniqueValuesAlt2([-2,-1,-1, 0, 2])
+countUniqueValuesAlt2([1,1,1,1,1,2])
