@@ -24,6 +24,7 @@ Some patterns include:
 * This pattern involves creating a window which can either ba an array or number from one position to another.
 * Depending on a certain condition, the window either increases or closes (and a new window is created).
 * Useful for keeping track of a subset of data in an array/string, etc.
+
 ### Divide and Conquer
 * Dividing a data set into smaller chunks and then repeating a process with a subset of data
 * **This pattern can tremendously decrease time complexity**
