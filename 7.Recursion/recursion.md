@@ -10,3 +10,11 @@
 * Every Recursive Function Should Have:
     1. A base case; the simplest resolution that stops the recursive execution.
     2. Different Input; the recursive call should change the data/arguments passed to function
+
+## Common Pitfalls
+1. No base case:
+    * Results in infinite loop, endlessly calling function until memory overloaded.
+2. Forgetting to return or returning the wrong thing
+    * Usually have to return the function (with modified argument) with the argument itself.
+    * Must modify argument somehow.
+    * Not returning from base case. Results in endless loop, execution does not end.
