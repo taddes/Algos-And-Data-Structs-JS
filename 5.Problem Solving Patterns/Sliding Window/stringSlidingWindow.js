@@ -1,0 +1,3 @@
+/* 
+Check for the longest collection of unique characters in a string
+*/
