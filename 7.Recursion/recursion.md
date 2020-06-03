@@ -18,3 +18,26 @@
     * Usually have to return the function (with modified argument) with the argument itself.
     * Must modify argument somehow.
     * Not returning from base case. Results in endless loop, execution does not end.
+3. Stack Overflow
+    * Too many functions invoked, exceeding memory.
+
+## Helper Method Recursion
+* Outer function with a recursive function within it.
+* Can be used to collect values within an array.
+```javascript
+function outer(input) {
+  let outerScopedVariable = [];
+
+  function helper(helperInput) {
+    // modify the outerScopedVariable
+    helper(helperInput--);
+  }
+
+  helper(input);
+
+  return outerScopedVariable;
+}
+```
+
+## Pure Recursion
+* Where the function itself is self contained and recursive. More challenging to implement, but effective in some cases.
