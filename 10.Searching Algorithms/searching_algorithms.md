@@ -15,3 +15,5 @@ Searching through a data structure to find a particular value.
     * `findIndex`
 
 ### Binary Search
+* Rather than eliminating one element at a time, you eliminate *half* of the remaining elements at a time. Significantly faster than linear search
+* **Only works on sorted arrays**

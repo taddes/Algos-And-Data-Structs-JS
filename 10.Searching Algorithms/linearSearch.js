@@ -1,4 +1,4 @@
-states = [
+const states = [
   "Alabama",
   "Alaska",
   "American Samoa",
