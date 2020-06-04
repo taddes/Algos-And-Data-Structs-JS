@@ -17,3 +17,8 @@ Searching through a data structure to find a particular value.
 ### Binary Search
 * Rather than eliminating one element at a time, you eliminate *half* of the remaining elements at a time. Significantly faster than linear search
 * **Only works on sorted arrays**
+* **Divide and conquer** using a pivot point
+* Performance:
+    * Worst/Average Case: O(log n)
+    * Best Case: O(1)
+* Pick the middle element, check if the desired value is less or greater than what you're searching for. The continue splitting your array into sub arrays, finding the midpoint again and again until you find your value.
