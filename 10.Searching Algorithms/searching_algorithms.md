@@ -22,3 +22,6 @@ Searching through a data structure to find a particular value.
     * Worst/Average Case: O(log n)
     * Best Case: O(1)
 * Pick the middle element, check if the desired value is less or greater than what you're searching for. The continue splitting your array into sub arrays, finding the midpoint again and again until you find your value.
+
+### Naive String Search
+* Basic way of searching for a substring in a string. For example, counting the number of times a smaller string occurs in a larger string
