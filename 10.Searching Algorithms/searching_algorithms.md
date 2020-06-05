@@ -25,3 +25,4 @@ Searching through a data structure to find a particular value.
 
 ### Naive String Search
 * Basic way of searching for a substring in a string. For example, counting the number of times a smaller string occurs in a larger string
+* Loop over long string with a loop over shorter string. If characters don't match, break inner loop. If they do match, continue. Use a counter to increment occurances
