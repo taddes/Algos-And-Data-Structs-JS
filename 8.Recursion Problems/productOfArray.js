@@ -16,7 +16,6 @@ function productOfArray(arr) {
   if (arr.length === 0) {
     return 1;
   }
-  console.log(arr[0])
   return arr[0] * productOfArray(arr.slice(1))
 }
 

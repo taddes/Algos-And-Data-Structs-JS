@@ -1,0 +1,2 @@
+# Selection Sort
+Similar to bubble sort, but instead of first placing large values into a sorted position, selection sort places small values into a sorted position. *Sorted data is accumulating at the beginning*. Search for minimum value at put it at the start of the array.

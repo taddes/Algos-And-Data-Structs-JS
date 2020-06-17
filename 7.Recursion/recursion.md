@@ -41,3 +41,5 @@ function outer(input) {
 
 ## Pure Recursion
 * Where the function itself is self contained and recursive. More challenging to implement, but effective in some cases.
+* For arrays, use slice method and the spread operator, or concat that make copies of the array so you do not mutate them.
+* Recall that strings are immutable, so you will need to use methods like slice, substr or substring to make copies.
