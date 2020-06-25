@@ -20,6 +20,7 @@ console.log(bubbleSort(testArr));
 function bubbleSortOptimized(arr) {
   let noSwaps;
   for (let i = arr.length; i > 0; i--) {
+    console.log(`*${i}*`)
     noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
       console.log(arr, arr[j], arr[j+1]);
