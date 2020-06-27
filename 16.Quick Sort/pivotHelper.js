@@ -39,7 +39,8 @@ function pivotHelper(arr, start=0, end=arr.length + 1) {
   let swapIdx = start;
   for (let i = start + 1; i < arr.length; i++) {
     if (pivot > arr[i]) {
-      pivot += 1
+      swapIdx++;
+      let temp = arr[i]
     }
   }
   return pivot;
