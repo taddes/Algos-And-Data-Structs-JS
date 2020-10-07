@@ -9,3 +9,4 @@
 
 ## Big O - Runtime Complexity - O (n^2)
 * O (n^2) - Quadratic - As size grows, so does complexity (nested loop).
+* Online Algorithm/Streaming in data - Algo that can work as data comes in.  The value can be placed where it needs to be in order. **Effective for this use case.**
