@@ -111,6 +111,22 @@ class SinglyLinkedList {
     return true
   }
 
+  remove(index) {
+    if (index > this.length || index < 0) return undefined;
+    if (index === this.length - 1) {
+      this.pop()
+    }
+    if (index === 0) {
+      this.shift()
+    }
+    previousNode = get(index - 1);
+    removedNode = previousNode.next;
+    previousNode.next = removedNode.next;
+    this.length--;
+    return removedNode;
+
+  }
+
 }
 
 list = new SinglyLinkedList()
@@ -130,3 +146,4 @@ console.log(list.get(2))
 list.insert(1, 'test')
 console.log(list)
 console.log(list.get(1))
+console.log(list.remove(3))
