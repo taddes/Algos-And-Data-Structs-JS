@@ -33,17 +33,49 @@ should show up.
 5. Swap the starting element/the pivot with pivot index
 6. Return the pivot index.
 */
+function swap(array, i, j) {
+  let temp = array[i];
+  array[i] = array[j];
+  array[j] = temp
+}
 
-function pivotHelper(arr, start=0, end=arr.length + 1) {
+function pivotHelper(arr, start=0, end=arr.length+1) {
   let pivot = arr[start];
   let swapIdx = start;
-  for (let i = start + 1; i < arr.length; i++) {
+
+  for (let i = start+1; i <arr.length; i++) {
     if (pivot > arr[i]) {
       swapIdx++;
-      let temp = arr[i]
+      let temp = arr[i];
+      arr[swapIdx] = arr[i];
+      arr[i] = temp
     }
   }
-  return pivot;
+
+  console.log(arr, pivot, swapIdx)
+  let temp = arr[start];
+  arr[start] = arr[swapIdx]
+  arr[swapIdx] = temp
+  console.log(arr)
+  return swapIdx
+}
+
+function pivot(arr, start=0, end=arr.length-1) {
+  const swap = (arr, idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx[1]]];
+  };
+
+  let pivot = arr[start];
+  let swapIdx = start;
+
+  for (let i = start+1; i <= end; i++) {
+    if (pivot > arr[i]) {
+      swapIdx++;
+      swap(arr, swapIdx, i);
+    }
+  }
+  swap(arr, start, swapIdx);
+  return swapIdx
 }
 
 console.log(pivotHelper([4,8,2,1,5,7,6,3]))
