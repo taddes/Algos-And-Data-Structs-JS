@@ -12,3 +12,4 @@ function same(arr1, arr2) {
     return true
 }
 
+console.log(same([3,1,2,3],[1,4,9,9]))
