@@ -26,6 +26,7 @@ class SinglyLinkedList {
   }
 
   pop() {
+    console.log('POP')
     if (!this.head) return undefined;
     let current = this.head;
     let newTail = current;
@@ -114,17 +115,42 @@ class SinglyLinkedList {
   remove(index) {
     if (index > this.length || index < 0) return undefined;
     if (index === this.length - 1) {
-      this.pop()
+      return this.pop()
     }
     if (index === 0) {
-      this.shift()
+      return this.shift()
     }
-    previousNode = get(index - 1);
-    removedNode = previousNode.next;
+    let previousNode = this.get(index - 1);
+    let removedNode = previousNode.next;
     previousNode.next = removedNode.next;
     this.length--;
     return removedNode;
 
+  }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+       next = node.next;
+       node.next = prev;
+       prev = node;
+       node = next;
+    }
+    return this;
+  }
+
+  print() {
+    let arr = [];
+    let current = this.head;
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr)
   }
 
 }
@@ -147,3 +173,6 @@ list.insert(1, 'test')
 console.log(list)
 console.log(list.get(1))
 console.log(list.remove(3))
+list.print()
+list.reverse()
+list.print()
